@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;700&family=Big+Shoulders+Display&family=Courgette&family=Inter:wght@400;700&family=Josefin+Slab:wght@100&family=Kalam:wght@300&family=Lexend+Deca&family=Neonderthaw&family=Oleo+Script+Swash+Caps:wght@400;700&family=Outfit:wght@300;400;600&family=Pacifico&family=Poppins:wght@200;400;600&family=Quicksand:wght@300&family=Rajdhani&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Frontend Mentor | Manage landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      background-color: white;
+      font-family: 'Be Vietnam Pro', sans-serif;
+
+
+
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 10rem;
+      padding-right: 10rem;
+      padding-top: 40px;
+      cursor: wait;
+
+    }
+
+    /* nav{
+      display: none;
+    } */
+
+    .nav nav a {
+      padding: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 13px;
+    }
+
+    .nav nav a:hover {
+      color: hsl(227, 12%, 61%);
+    }
+
+    .nav button {
+      height: 2.7rem;
+      width: 7.5rem;
+      border: none;
+      border-radius: 20px;
+      background-color: hsl(12, 88%, 59%);
+      color: white;
+      font-size: 12px;
+      cursor: context-menu;
+    }
+
+    .nav button:hover {
+      background-color: hsl(12, 88%, 59%);
+      opacity: 60%;
+    }
+
+    .Head {
+      padding-left: 10rem;
+      padding-top: 5rem;
+      padding-right: 4.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .Head .heading {
+      max-width: 500px;
+    }
+
+    .Head .photo {
+      padding-right: 70px;
+    }
+
+    .Head .heading button {
+      height: 2.7rem;
+      width: 7.5rem;
+      border: none;
+      border-radius: 20px;
+      background-color: hsl(12, 88%, 59%);
+      color: white;
+      font-size: 12px;
+      margin-top: 35px;
+    }
+
+    .Head .heading button:hover {
+      background-color: hsl(12, 88%, 59%);
+      opacity: 60%;
+    }
+
+    .Head .heading h1 {
+      color: hsl(228, 39%, 23%);
+      font-size: 3em;
+    }
+
+    .Head .heading p {
+      opacity: 50%;
+      font-size: 15px;
+      padding-top: 35px;
+      line-height: 25px;
+    }
+
+    .intro {
+      padding-top: 60px;
+      padding-left: 10rem;
+      padding-right: 10rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .intro .block1 {
+      max-width: 500px;
+      padding-bottom: 130px;
+    }
+
+    .intro .block1 h1 {
+      color: hsl(228, 39%, 23%);
+    }
+
+    .intro .block1 p {
+      opacity: 50%;
+      font-size: 15px;
+      padding-top: 35px;
+      line-height: 25px;
+    }
+
+    ::marker {
+      background-color: blue;
+      height: 5px;
+      width: 5px;
+    }
+
+    .intro .block2 {
+      max-width: 430px;
+    }
+
+    .intro .block2 h3 {
+      color: hsl(228, 39%, 23%);
+      font-size: 15px;
+
+    }
+
+    .intro .block2 p {
+      opacity: 50%;
+      font-size: 15px;
+
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow: auto;
+      white-space: nowrap;
+      padding-top: 100px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+    }
+
+    .info::-webkit-scrollbar{
+      display: none;
+    }
+
+    .info .b1 {
+      max-width: 400px;
+      max-height: 100px;
+      background-color: hsl(0, 0%, 98%);
+      text-align: center;
+      margin-right: 160px;
+      padding: 20px;
+    }
+
+    .info .b1 img {
+      width: 50px;
+      position: relative;
+      bottom: 50px;
+      left: 9rem;
+      border-radius: 50%;
+    }
+
+    .info .b1 h6 {
+      color: hsl(228, 39%, 23%);
+      position: relative;
+      bottom: 40px;
+      background-color: hsl(0, 0%, 98%);
+    }
+
+    .info .b1 p {
+      opacity: 50%;
+      background-color: hsl(0, 0%, 98%);
+      font-size: 12px;
+      position: relative;
+      bottom: 40px;
+    }
+
+    .bt {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bt button {
+      height: 2.7rem;
+      width: 7.5rem;
+      border: none;
+      border-radius: 20px;
+      background-color: hsl(12, 88%, 59%);
+      color: white;
+      font-size: 12px;
+      margin-top: 35px;
+    }
+
+    .bt button:hover {
+      background-color: hsl(12, 88%, 59%);
+      opacity: 60%;
+    }
+
+
+    .today {
+      background-color: hsl(12, 88%, 59%);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 100px;
+      padding: 40px 0 40px 0;
+    }
+
+    .today button {
+      height: 2.7rem;
+      width: 7.5rem;
+      border: none;
+      border-radius: 20px;
+      background-color: white;
+      color: hsl(12, 88%, 59%);
+      font-size: 12px;
+
+    }
+
+    .today button:hover {
+      background-color: white;
+      opacity: 60%;
+      color: hsl(227, 12%, 61%);
+    }
+
+    .today h1 {
+      background-color: hsl(12, 88%, 59%);
+      color: white;
+    }
+
+
+    .footer {
+      background-color: black;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 200px;
+      padding: 0 50px 0 50px;
+    }
+
+    .footer .c2 ol li {
+      background-color: black;
+      color: white;
+      list-style: none;
+      padding-top: 10px;
+      font-size: 12px;
+    }
+
+    .footer .c3 ol li {
+      background-color: black;
+      color: white;
+      list-style: none;
+      padding-top: 10px;
+      font-size: 12px;
+    }
+
+    .footer ol li:hover {
+      color: hsl(12, 88%, 59%);
+      cursor: pointer;
+
+    }
+
+    .footer .c1 img {
+      background-color: black;
+    }
+
+    .footer .c1 .smi {
+      padding-top: 50px;
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer .c1 .smi img {
+      height: 16px;
+      padding-left: 6px;
+    }
+
+    .footer .c1 .smi img:hover {
+      cursor: pointer;
+      filter: drop-shadow(1px -2px 20px hsl(12, 88%, 59%));
+    }
+
+    .footer .c1 .lo {
+      background-color: black;
+    }
+
+    .footer .c4 {
+      background-color: black;
+    }
+
+    .footer .c4 p {
+      background-color: black;
+      color: white;
+      font-size: 9px;
+      padding-top: 50px;
+      padding-left: 30px;
+      opacity: 50%;
+    }
+
+    .footer .c4 input {
+      height: 30px;
+      width: 160px;
+      border: none;
+      border-radius: 15px;
+
+    }
+
+    .footer .c4 input::placeholder {
+      padding-left: 10px;
+      font-size: 10px;
+    }
+
+    .footer .c4 button {
+      height: 30px;
+      width: 45px;
+      border-radius: 15px;
+      background-color: hsl(12, 88%, 59%);
+      border: none;
+      color: white;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    .footer .c4 button:hover {
+      opacity: 50%;
+    }
+
+
+    /* @media (min-width: 640px) { 
+  nav{
+    display:block;
+  }
+ } */
+
+
+
+
+
+    /* .main{
+  background-image: url("/home/creator/Desktop/projects/manage-landing-page-master/images/bg-tablet-pattern.svg");
+      background-repeat:no-repeat;
+      padding-top: 500px;
+}  */
+  </style>
+
+</head>
+
+<body>
+  <div class="main">
+
+    <div class="nav">
+      <img src="images/logo.svg" height="22px">
+
+      <nav class="block sm: hidden">
+        <a href="#">Pricing</a>
+        <a href="#">Product</a>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Community</a>
+      </nav>
+
+      <button>Get Started</button>
+
+      <!-- <div class="bg">
+     <img src="/home/creator/Desktop/projects/manage-landing-page-master/images/bg-tablet-pattern.svg" alt="">
+  </div>
+  </div>
+
+
+<div class="main">
+ <div class="heading">
+  <h
+ </div>
+
+</div> -->
+    </div>
+
+    <div class="Head">
+      <div class="heading ">
+        <h1> Bring everyone together to build better products.</h1>
+        <p>Manage makes it simple for software teams<br> to plan day-to-day
+          tasks while keeping the <br>larger team goals in view.
+        </p>
+        <button>Get Started</button>
+      </div>
+      <div class="photo">
+        <img src="images/illustration-intro.svg">
+      </div>
+
+    </div>
+
+
+    <div class="intro">
+      <div class="block1">
+        <h1>What’s different about Manage?</h1>
+
+        <p>Manage provides all the functionality your <br>team needs, without
+          the complexity. Our<br> software is tailor-made for modern digital<br>
+          product teams.</p>
+      </div>
+
+
+      <div class="block2">
+        <ol>
+          <li>
+            <h3> Track company-wide progress</h3><br>
+            <p> See how your day-to-day tasks fit into the wider vision. Go from
+              tracking progress at the milestone level all the way done to the
+              smallest of details. Never lose sight of the bigger picture again.</p>
+          </li><br><br>
+
+          <li>
+            <h3>Advanced built-in reports</h3><br>
+            <p>Set internal delivery estimates and track progress toward company
+              goals. Our customisable dashboard helps you build out the reports
+              you need to keep key stakeholders informed.</p>
+          </li><br><br>
+
+
+          <li>
+            <h3> Everything you need in one place</h3><br>
+            <p>Stop jumping from one service to another to communicate, store files,
+              track tasks and share documents. Manage offers an all-in-one team
+              productivity solution.
+            </p>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+    <h1 style="padding-top:100px; color:hsl(228, 39%, 23%); text-align: center;">What they’ve said</h1>
+    <div class="info">
+
+      <div class="b1">
+        <img src="images/avatar-anisha.png">
+        <h6> Anisha Li</h6>
+        <p> “Manage has supercharged our team’s workflow. The<br> ability to maintain
+          visibility on larger milestones at all times<br> keeps everyone motivated.”</p>
+      </div>
+      <div class="b1">
+        <img src="images/avatar-ali.png">
+        <h6> Ali Bravo</h6>
+        <p> “We have been able to cancel so many other subscriptions <br>since using
+          Manage. There is no more cross-channel<br> confusion and everyone is much
+          more focused.”</p>
+      </div>
+      <div class="b1">
+        <img src="images/avatar-richard.png">
+        <h6> Richard Watts</h6>
+        <p> “Manage allows us to provide structure and process. <br>It keeps us organized
+          and focused. I can’t stop recommending<br> them to everyone I talk to!”
+        </p>
+      </div>
+      <div class="b1">
+        <img src="images/avatar-shanai.png">
+        <h6> Shanai Gough</h6>
+        <p> “Their software allows us to track, manage and collaborate <br>on our projects
+          from anywhere. It keeps the whole team in-<br>sync without being intrusive.”</p>
+      </div>
+    </div>
+    <div class="bt">
+      <button>Get Started</button>
+    </div>
+    <div class="today">
+      <h1>Simplify how your team <br>works today.</h1>
+      <button>Get Started</button>
+    </div>
+
+
+    <div class="footer">
+
+      <div class="c1">
+        <div class="lo">
+          <img src="images/logo.svg" height="22px">
+        </div>
+        <div class="smi">
+          <img src="images/icon-facebook.svg" alt="icon-facebook">
+          <img src="images/icon-youtube.svg" alt="icon-youtube">
+          <img src="images/icon-twitter.svg" alt="icon-twitter">
+          <img src="images/icon-pinterest.svg" alt="icon-pinterest">
+          <img src="images/icon-instagram.svg" alt="icon-instagram">
+        </div>
+      </div>
+
+      <div class="c2">
+        <ol>
+          <li>Home</li>
+          <li>Pricing</li>
+          <li>Products</li>
+          <li>About us</li>
+        </ol>
+      </div>
+      <div class="c3">
+        <ol>
+          <li>Careers</li>
+          <li>Community</li>
+          <li>Privacy Policy</li>
+        </ol>
+      </div>
+
+      <div class="c4">
+        <input type="search" placeholder="updates on your inbox."><button>Go</button>
+        <p>Copyright 2020.All RightsReservoid</p>
+      </div>
+
+    </div>
+
+
+
+
+    <!-- Pricing
+  Product 
+  About Us
+  Careers
+  Community
+
+  Get Started
+
+  Bring everyone together to build better products.
+
+  Manage makes it simple for software teams to plan day-to-day 
+  tasks while keeping the larger team goals in view.
+
+  Get Started
+
+  What’s different about Manage?
+
+  Manage provides all the functionality your team needs, without 
+  the complexity. Our software is tailor-made for modern digital 
+  product teams. 
+
+  01
+  Track company-wide progress
+  See how your day-to-day tasks fit into the wider vision. Go from 
+  tracking progress at the milestone level all the way done to the 
+  smallest of details. Never lose sight of the bigger picture again.
+
+  02
+  Advanced built-in reports
+  Set internal delivery estimates and track progress toward company 
+  goals. Our customisable dashboard helps you build out the reports 
+  you need to keep key stakeholders informed.
+
+  03
+  Everything you need in one place
+  Stop jumping from one service to another to communicate, store files, 
+  track tasks and share documents. Manage offers an all-in-one team 
+  productivity solution.
+
+  What they’ve said
+
+  Anisha Li
+  “Manage has supercharged our team’s workflow. The ability to maintain 
+  visibility on larger milestones at all times keeps everyone motivated.”
+
+  Ali Bravo
+  “We have been able to cancel so many other subscriptions since using 
+  Manage. There is no more cross-channel confusion and everyone is much 
+  more focused.”
+
+  Richard Watts
+  “Manage allows us to provide structure and process. It keeps us organized 
+  and focused. I can’t stop recommending them to everyone I talk to!”
+
+  Shanai Gough
+  “Their software allows us to track, manage and collaborate on our projects 
+  from anywhere. It keeps the whole team in-sync without being intrusive.”
+
+  Get Started
+
+  Simplify how your team works today.
+  Get Started
+
+  Home
+  Pricing
+  Products
+  About Us
+  Careers
+  Community
+  Privacy Policy
+
+  Updates in your inbox…
+  Go
+
+  Copyright 2020. All Rights Reserved
+  <!-- <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-pinterest"></i>
+      <i class="fa-brands fa-instagram"></i> -->
+
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Aniket Doke</a>.
+  </div> -->
+</body>
+
+</html>
